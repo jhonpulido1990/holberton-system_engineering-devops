@@ -1,1 +1,0 @@
-this scrips to directory
