@@ -13,7 +13,7 @@ Display the contents list of your current directory.
 
 Example:
 
-$ ./1-listit
+```$ ./1-listit
 Applications    Documents   Dropbox Movies Pictures
 Desktop Downloads   Library Music Public
 $
