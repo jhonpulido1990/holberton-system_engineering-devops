@@ -1,17 +1,190 @@
-# _0x02. Shell, I/O Redirections and filters
+# 0x02. Shell, I/O Redirections and filters
+## Details
+      By Julien Barbier          Weight: 1              Project over - took place from 09-27-2021 to 09-28-2021          - you're done with 150% of tasks.              An auto review will be launched at the deadline      #### In a nutshell…
+* Auto QA review:          116.0/116 mandatory            &            6.5/18 optional      
+* Altogether:         136.11%* Mandatory: 100.0%
+* Optional: 36.11%
+*               Calculation:                   100.0%                    + (100.0% * 36.11%)               == 136.11%
 
-## _1. Confused smiley
-Write a script that displays a confused smiley "(Ôo)'.
+## About Bash projects
 
-julien@ubuntu:/tmp/h$ ./1-confused_smiley 
+Unless stated, all your projects will be auto-corrected with Ubuntu 20.04 LTS.
+
+## Resources
+Read or watch :
+* [Shell, I/O Redirection](https://intranet.hbtn.io/rltoken/Kwe7oA6N7iWf8kfnteJLrA) 
+
+* [Special Characters](https://intranet.hbtn.io/rltoken/6G_Cu3hczr_SdaSzlunjZg) 
+
+man or help :
+*  ` echo ` 
+*  ` cat ` 
+*  ` head ` 
+*  ` tail ` 
+*  ` find ` 
+*  ` wc ` 
+*  ` sort ` 
+*  ` uniq ` 
+*  ` grep ` 
+*  ` tr ` 
+*  ` rev ` 
+*  ` cut ` 
+*  ` passwd (5) `  (i.e.  ` man 5 passwd ` )
+## Learning Objectives
+At the end of this project, you are expected to be able to  [explain to anyone](https://intranet.hbtn.io/rltoken/35eszk_xq3C3s4TzIrb-ng) 
+ ,  without the help of Google :
+### Shell, I/O Redirection
+* What do the commands  ` head ` ,  ` tail ` ,  ` find ` ,  ` wc ` ,  ` sort ` ,  ` uniq ` ,  ` grep ` ,  ` tr `  do
+* How to redirect standard output to a file
+* How to get standard input from a file instead of the keyboard
+* How to send the output from one program to the input of another program
+* How to combine commands and filters with redirections
+### Special Characters
+* What are special characters
+* Understand what do the white spaces, single quotes, double quotes, backslash, comment, pipe, command separator, tilde and how and when to use them
+### Other Man Pages
+* How to display a line of text
+* How to concatenate files and print on the standard output
+* How to reverse a string
+* How to remove sections from each line of files
+* What is the  ` /etc/passwd `  file and what is its format
+* What is the  ` /etc/shadow `  file and what is its format
+## Requirements
+### General
+* Allowed editors:  ` vi ` ,  ` vim ` ,  ` emacs ` 
+* All your scripts will be tested on Ubuntu 20.04 LTS
+* All your scripts should be exactly two lines long ( ` $ wc -l file `  should print 2)
+* All your files should end with a new line ([why?](http://unix.stackexchange.com/questions/18743/whats-the-point-in-adding-a-new-line-to-the-end-of-a-file/18789) 
+)
+* The first line of all your files should be exactly  ` #!/bin/bash ` 
+* A  ` README.md `  file, at the root of the folder of the project, describing what each script is doing
+* You are not allowed to use backticks,  ` && ` ,  ` || `  or  ` ; ` 
+* All your files must be executable
+* You are not allowed to use  ` sed `  or  ` awk ` 
+## More Info
+Read your   ` /etc/passwd `   and   ` /etc/shadow `   files.
+Note: You do not have to learn about   ` fmt `  ,   ` pr `  ,   ` du `  ,   ` gzip `  ,   ` tar `  ,   ` lpr `  ,   ` sed `   and   ` awk `   yet.
+## Quiz questions
+Show
+#### 
+        
+        Question #0
+    
+ Quiz question Body Which symbol should I use to redirect the standard output to a file (overwrite the file)? 
+ Quiz question Answers *  ` >> ` 
+
+*  ` 2> ` 
+
+*  ` > ` 
+
+*  ` & ` 
+
+ Quiz question Tips #### 
+        
+        Question #1
+    
+ Quiz question Body Which symbol should I use to redirect the standard output to a file (appending to the file)? 
+ Quiz question Answers *  ` >> ` 
+
+*  ` 2> ` 
+
+*  ` > ` 
+
+*  ` & ` 
+
+ Quiz question Tips #### 
+        
+        Question #2
+    
+ Quiz question Body Which symbol should I use to redirect the error output to the standard output? 
+ Quiz question Answers *  ` 2>&1 ` 
+
+*  ` 2> ` 
+
+*  ` 1>&2 ` 
+
+ Quiz question Tips #### 
+        
+        Question #3
+    
+ Quiz question Body Which symbol should I use to start a comment?
+ Quiz question Answers *  ` & ` 
+
+*  ` ! ` 
+
+*  ` // ` 
+
+*  ` # ` 
+
+ Quiz question Tips #### 
+        
+        Question #4
+    
+ Quiz question Body Which command should I use to display the entire file content?
+ Quiz question Answers * grep
+
+* cat
+
+* head
+
+* tail
+
+ Quiz question Tips #### 
+        
+        Question #5
+    
+ Quiz question Body Which command should I use to display the last 11 lines of a file?
+ Quiz question Answers * head -n 11 my_file
+
+* head 11 my_file
+
+* tail -n 11 my_file
+
+* tail 11 my_file
+
+ Quiz question Tips #### 
+        
+        Question #6
+    
+ Quiz question Body Which symbol should I use to escape a special character?
+ Quiz question Answers *  ` \ ` 
+
+*  ` ! ` 
+
+*  ` $ ` 
+
+*  ` # ` 
+
+ Quiz question Tips ## Tasks
+### 0. Hello World
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a script that prints “Hello, World”, followed by a new line to the standard output.
+```bash
+julien@ubuntu:/tmp/h$ ./0-hello_world 
+Hello, World
+julien@ubuntu:/tmp/h$ ./0-hello_world | cat -e
+Hello, World$
+julien@ubuntu:/tmp/h$ 
+
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 0-hello_world ` 
+ Self-paced manual review  Panel footer - Controls 
+### 1. Confused smiley
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a script that displays a confused smiley   ` "(Ôo)' `  .
+ ` julien@ubuntu:/tmp/h$ ./1-confused_smiley 
 "(Ôo)'
-julien@ubuntu:/tmp/h$
-
-## _2. Let's display a file
-Display the content of the /etc/passwd file.
-
+julien@ubuntu:/tmp/h$ 
+ `  Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 1-confused_smiley ` 
+ Self-paced manual review  Panel footer - Controls 
+### 2. Let's display a file
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Display the content of the   ` /etc/passwd `   file.
 Example:
-
+```bash
 $ ./2-hellofile
 ##
 # User Database
@@ -38,11 +211,16 @@ _mcxalr:*:54:54:MCX AppLaunch:/var/empty:/usr/bin/false
 _krbfast:*:246:-2:Kerberos FAST Account:/var/empty:/usr/bin/false
 $
 
-## _3. What about 2?
-Display the content of /etc/passwd and /etc/hosts
-
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 2-hellofile ` 
+ Self-paced manual review  Panel footer - Controls 
+### 3. What about 2?
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Display the content of   ` /etc/passwd `   and   ` /etc/hosts ` 
 Example:
-
+```bash
 $ ./3-twofiles
 ##
 # User Database
@@ -68,11 +246,16 @@ daemon:*:1:1:System Services:/var/root:/usr/bin/false
 ::1 localhost
 $
 
-## _4. Last lines of a file
-Display the last 10 lines of /etc/passwd
-
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 3-twofiles ` 
+ Self-paced manual review  Panel footer - Controls 
+### 4. Last lines of a file
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Display the last 10 lines of   ` /etc/passwd ` 
 Example:
-
+```bash
 $ ./4-lastlines
 _assetcache:*:235:235:Asset Cache Service:/var/empty:/usr/bin/false
 _coremediaiod:*:236:236:Core Media IO Daemon:/var/empty:/usr/bin/false
@@ -85,14 +268,18 @@ _displaypolicyd:*:244:244:Display Policy Daemon:/var/empty:/usr/bin/false
 _astris:*:245:245:Astris Services:/var/db/astris:/usr/bin/false
 _krbfast:*:246:-2:Kerberos FAST Account:/var/empty:/usr/bin/false
 
+
+```
 Tips: “Thinks of it as a cat, what is at the end of it?”
-$
-
-## _5. I'd prefer the first ones actually
-Display the first 10 lines of /etc/passwd
-
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 4-lastlines ` 
+ Self-paced manual review  Panel footer - Controls 
+### 5. I'd prefer the first ones actually
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Display the first 10 lines of   ` /etc/passwd ` 
 Example:
-
+```bash
 $ ./5-firstlines
 ##
 # User Database
@@ -106,12 +293,17 @@ $ ./5-firstlines
 ##
 $
 
-## _6. Line #2
-Write a script that displays the third line of the file iacta.
-
-The file iacta will be in the working directory
-
-You’re not allowed to use sed
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 5-firstlines ` 
+ Self-paced manual review  Panel footer - Controls 
+### 6. Line #2
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a script that displays the third line of the file   ` iacta `  .
+The file   ` iacta `   will be in the working directory
+* You’re not allowed to use  ` sed ` 
+```bash
 julien@ubuntu:/tmp/h$ cat iacta 
 Alea iacta est
 
@@ -130,11 +322,17 @@ Read more: https://en.wikipedia.org/wiki/Alea_iacta_est
 julien@ubuntu:/tmp/h$ ./6-third_line 
 Alea iacta est ("The die is cast") is a Latin phrase attributed by Suetonius
 julien@ubuntu:/tmp/h$ 
-Note: The output will differ, depending on the content of the file iacta.
 
-## _7. It is a good file that cuts iron without making a noise
-Write a shell script that creates a file named exactly \*\\'"Best School"\'\\*$\?\*\*\*\*\*:) containing the text Best School ending by a new line.
-
+```
+Note: The output will differ, depending on the content of the file   ` iacta `  .
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 6-third_line ` 
+ Self-paced manual review  Panel footer - Controls 
+### 7. It is a good file that cuts iron without making a noise
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a shell script that creates a file named exactly   ` \*\\'"Best School"\'\\*$\?\*\*\*\*\*:) `   containing the text   ` Best School `    ending by a new line.
+```bash
 julien@ubuntu:~/shell$ ls && ./7-file && ls -l && cat -e \\*
 0-mac_and_cheese 7-file 7-file~ Makefile
 total 20
@@ -142,13 +340,19 @@ total 20
 -rwxrw-r-- 1 julien julien 90 Jan 20 06:40 7-file
 -rwxrw-r-- 1 julien julien 69 Jan 20 06:37 7-file~
 -rw-rw-r-- 1 julien julien 14 Jan 20 06:38 Makefile
--rw-rw-r-- 1 julien julien 17 Jan 20 06:40 \*\\'"Best School"\'\\*$\?\*\*\*\*\*:)
+-rw-rw-r-- 1 julien julien 17 Jan 20 06:40 '\*\\'"Best School"\'\\*$\?\*\*\*\*\*:)'
 Best School$
 julien@ubuntu:~/shell$
 
-## _8. Save current state of directory
-Write a script that writes into the file ls_cwd_content the result of the command ls -la. If the file ls_cwd_content already exists, it should be overwritten. If the file ls_cwd_content does not exist, create it.
-
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 7-file ` 
+ Self-paced manual review  Panel footer - Controls 
+### 8. Save current state of directory
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a script that writes into the file   ` ls_cwd_content `   the result of the command   ` ls -la `  . If the file   ` ls_cwd_content `   already exists, it should be overwritten. If the file   ` ls_cwd_content `   does not exist, create it.
+```bash
 julien@ubuntu:/tmp/h$ ls -la
 total 20
 drwxrwxr-x  2 julien julien 4096 Sep 20 18:18 .
@@ -173,12 +377,18 @@ drwxrwxrwt 13 root   root   4096 Sep 20 18:18 ..
 -rw-rw-r--  1 betty  julien   23 Sep 20 14:25 hello
 -rw-rw-r--  1 julien julien  926 Sep 20 17:52 iacta
 -rw-rw-r--  1 julien julien    0 Sep 20 18:18 ls_cwd_content
-julien@ubuntu:/tmp/h$
+julien@ubuntu:/tmp/h$ 
 
-## _9. Duplicate last line
-Write a script that duplicates the last line of the file iacta
-
-The file iacta will be in the working directory
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 8-cwd_state ` 
+ Self-paced manual review  Panel footer - Controls 
+### 9. Duplicate last line
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a script that duplicates the last line of the file   ` iacta ` 
+* The file  ` iacta `  will be in the working directory
+```bash
 julien@ubuntu:/tmp/h$ cat iacta 
 Alea iacta est
 
@@ -211,11 +421,17 @@ indicate that events have passed a point of no return.
 
 Read more: https://en.wikipedia.org/wiki/Alea_iacta_est
 Read more: https://en.wikipedia.org/wiki/Alea_iacta_est
-julien@ubuntu:/tmp/h$
+julien@ubuntu:/tmp/h$ 
 
-## _10. No more javascript
-Write a script that deletes all the regular files (not the directories) with a .js extension that are present in the current directory and all its subfolders.
-
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 9-duplicate_last_line ` 
+ Self-paced manual review  Panel footer - Controls 
+### 10. No more javascript
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a script that deletes all the regular files (not the directories) with a   ` .js `   extension that are present in the current directory and all its subfolders.
+```bash
 julien@ubuntu:/tmp/h$ ls -lR
 .:
 total 24
@@ -251,11 +467,17 @@ total 0
 total 0
 julien@ubuntu:/tmp/h$ 
 
-## _11. Don't just count your directories, make your directories count
-Write a script that counts the number of directories and sub-directories in the current directory.
-
-The current and parent directories should not be taken into account
-Hidden directories should be counted
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 10-no_more_js ` 
+ Self-paced manual review  Panel footer - Controls 
+### 11. Don't just count your directories, make your directories count
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a script that counts the number of directories and sub-directories in the current directory.
+* The current and parent directories should not be taken into account
+* Hidden directories should be counted
+```bash
 julien@production-503e7013:~/shell/fun_with_the_shell$ ls -lRa
 .:
 total 32
@@ -296,13 +518,18 @@ julien@production-503e7013:~/shell/fun_with_the_shell$ ./11-directories
 3
 julien@production-503e7013:~/shell/fun_with_the_shell$
 
-## _12. What’s new
-Create a script that displays the 10 newest files in the current directory.
-
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 11-directories ` 
+ Self-paced manual review  Panel footer - Controls 
+### 12. What’s new
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Create a script that displays the 10 newest files in the current directory.
 Requirements:
-
-One file per line
-Sorted from the newest to the oldest
+* One file per line
+* Sorted from the newest to the oldest
+```bash
 alex@ubuntu:/tmp$ ls -l
 total 7
 -rwxr-xr-x 1 501 dialout  32 Sep 27 23:51 0-hello_world
@@ -332,12 +559,18 @@ alex@ubuntu:/tmp$ ./12-newest_files
 3-twofiles
 alex@ubuntu:/tmp$
 
-## _13. Being unique is better than being perfect
-Create a script that takes a list of words as input and prints only words that appear exactly once.
-
-Input format: One line, one word
-Output format: One line, one word
-Words should be sorted
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 12-newest_files ` 
+ Self-paced manual review  Panel footer - Controls 
+### 13. Being unique is better than being perfect
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Create a script that takes a list of words as input and prints only words that appear exactly once.
+* Input format: One line, one word
+* Output format: One line, one word
+* Words should be sorted
+```bash
 julien@ubuntu:/tmp/0x02$ cat list 
 C#
 C
@@ -369,27 +602,42 @@ julien@ubuntu:/tmp/0x02$ cat list | ./13-unique
 C
 C++
 Go
-julien@ubuntu:/tmp/0x02$
+julien@ubuntu:/tmp/0x02$ 
 
-## _14. It must be in that file
-Display lines containing the pattern “root” from the file /etc/passwd
-
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 13-unique ` 
+ Self-paced manual review  Panel footer - Controls 
+### 14. It must be in that file
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Display lines containing the pattern “root” from the file   ` /etc/passwd ` 
+```bash
 $ ./14-findthatword
 root:*:0:0:System Administrator:/var/root:/bin/sh
 daemon:*:1:1:System Services:/var/root:/usr/bin/false
 _cvmsroot:*:212:212:CVMS Root:/var/empty:/usr/bin/false
 $
 
-## _15. Count that word
-Display the number of lines that contain the pattern “bin” in the file /etc/passwd
-
-$ ./15-countthatword
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 14-findthatword ` 
+ Self-paced manual review  Panel footer - Controls 
+### 15. Count that word
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Display the number of lines that contain the pattern “bin” in the file   ` /etc/passwd ` 
+ ` $ ./15-countthatword
 81
 $ 
-
-## _16. What's next?
-Display lines containing the pattern “root” and 3 lines after them in the file /etc/passwd.
-
+ `  Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 15-countthatword ` 
+ Self-paced manual review  Panel footer - Controls 
+### 16. What's next?
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Display lines containing the pattern “root” and 3 lines after them in the file   ` /etc/passwd `  .
+```bash
 $ ./16-whatsnext
 root:*:0:0:System Administrator:/var/root:/bin/sh
 daemon:*:1:1:System Services:/var/root:/usr/bin/false
@@ -403,9 +651,15 @@ _dovecot:*:214:6:Dovecot Administrator:/var/empty:/usr/bin/false
 _dpaudio:*:215:215:DP Audio:/var/empty:/usr/bin/false
 $
 
-## _17. I hate bins
-Display all the lines in the file /etc/passwd that do not contain the pattern “bin”.
-
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 16-whatsnext ` 
+ Self-paced manual review  Panel footer - Controls 
+### 17. I hate bins
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Display all the lines in the file   ` /etc/passwd `   that do not contain the pattern “bin”.
+```bash
 $ ./17-hidethisword
 ##
 # User Database
@@ -419,10 +673,16 @@ $ ./17-hidethisword
 ##
 $
 
-## _18. Letters only please
-Display all lines of the file /etc/ssh/sshd_config starting with a letter.
-
-include capital letters as well
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 17-hidethisword ` 
+ Self-paced manual review  Panel footer - Controls 
+### 18. Letters only please
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Display all lines of the file   ` /etc/ssh/sshd_config `   starting with a letter.
+* include capital letters as well
+```bash
 $ ./18-letteronly
 SyslogFacility AUTHPRIV
 AuthorizedKeysFile  .ssh/authorized_keys
@@ -431,31 +691,49 @@ AcceptEnv LANG LC_*
 Subsystem   sftp    /usr/libexec/sftp-server
 $
 
-## _19. A to Z
-Replace all characters A and c from input to Z and e respectively.
-
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 18-letteronly ` 
+ Self-paced manual review  Panel footer - Controls 
+### 19. A to Z
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Replace all characters   ` A `   and   ` c `   from input to   ` Z `   and   ` e `   respectively.
+```bash
 julien@ubuntu:/tmp/0x02$ echo 'Replace all characters `A` and `c` from input to `Z` and `e`.' | ./19-AZ 
 Replaee all eharaeters `Z` and `e` from input to `Z` and `e`.
-julien@ubuntu:/tmp/0x02$
+julien@ubuntu:/tmp/0x02$ 
 
-## _20. Without C, you would live in hiago
-Create a script that removes all letters c and C from input.
-
-julien@ubuntu:/tmp/0x02$ echo Chicago | ./20-hiago 
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 19-AZ ` 
+ Self-paced manual review  Panel footer - Controls 
+### 20. Without C, you would live in hiago
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Create a script that removes all letters   ` c `   and   ` C `   from input.
+ ` julien@ubuntu:/tmp/0x02$ echo Chicago | ./20-hiago 
 hiago
-julien@ubuntu:/tmp/0x02$
-
-## _21. esreveR
-Write a script that reverse its input.
-
-julien@ubuntu:/tmp/0x02$ echo "Reverse" | ./21-reverse 
+julien@ubuntu:/tmp/0x02$ 
+ `  Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 20-hiago ` 
+ Self-paced manual review  Panel footer - Controls 
+### 21. esreveR
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a script that reverse its input.
+ ` julien@ubuntu:/tmp/0x02$ echo "Reverse" | ./21-reverse 
 esreveR
-julien@ubuntu:/tmp/0x02$
-
-## _22. DJ Cut Killer
-Write a script that displays all users and their home directories, sorted by users.
-
-Based on the the /etc/passwd file
+julien@ubuntu:/tmp/0x02$ 
+ `  Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 21-reverse ` 
+ Self-paced manual review  Panel footer - Controls 
+### 22. DJ Cut Killer
+          mandatory         Progress vs Score           Score: 100.00% (Checks completed: 100.00%)         Task Body Write a script that displays all users and their home directories, sorted by users.
+* Based on the the  ` /etc/passwd `  file
+```bash
 julien@ubuntu:/tmp/0x02$ cat /etc/passwd
 root:x:0:0:root:/root:/bin/bash
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
@@ -543,16 +821,22 @@ uucp:/var/spool/uucp
 uuidd:/run/uuidd
 whoopsie:/nonexistent
 www-data:/var/www
-julien@ubuntu:/tmp/0x02$
+julien@ubuntu:/tmp/0x02$ 
 
-## _23. Empty casks make the most noise
-Write a command that finds all empty files and directories in the current directory and all sub-directories.
-
-Only the names of the files and directories should be displayed (not the entire path)
-Hidden files should be listed
-One file name per line
-The listing should end with a new line
-You are not allowed to use basename, grep, egrep, fgrep or rgrep
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 22-users_and_homes ` 
+ Self-paced manual review  Panel footer - Controls 
+### 23. Empty casks make the most noise
+          #advanced         Progress vs Score           Score: 65.00% (Checks completed: 100.00%)         Task Body Write a command that finds all empty files and directories in the current directory and all sub-directories.
+* Only the names of the files and directories should be displayed (not the entire path)
+* Hidden files should be listed
+* One file name per line
+* The listing should end with a new line
+* You are not allowed to use  ` basename ` ,  ` grep ` ,  ` egrep ` ,  ` fgrep `  or  ` rgrep ` 
+```bash
 ubuntu@ip-172-31-63-244:~/0x02-shell_redirections$ ls -laR
 .:
 total 64
@@ -627,16 +911,22 @@ rudy_rigot.gif
 ........gif
 ubuntu@ip-172-31-63-244:~/0x02-shell_redirections$
 
-## _24. A gif is worth ten thousand words
-Write a script that lists all the files with a .gif extension in the current directory and all its sub-directories.
-
-Hidden files should be listed
-Only regular files (not directories) should be listed
-The names of the files should be displayed without their extensions
-The files should be sorted by byte values, but case-insensitive (file aaa should be listed before file bbb, file .b should be listed before file a, and file Rona should be listed after file jay)
-One file name per line
-The listing should end with a new line
-You are not allowed to use basename, grep, egrep, fgrep or rgrep
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 100-empty_casks ` 
+ Self-paced manual review  Panel footer - Controls 
+### 24. A gif is worth ten thousand words
+          #advanced         Progress vs Score           Score: 65.00% (Checks completed: 100.00%)         Task Body Write a script that lists all the files with a   ` .gif `   extension in the current directory and all its sub-directories.
+* Hidden files should be listed
+* Only regular files (not directories) should be listed
+* The names of the files should be displayed without their extensions
+* The files should be sorted by byte values, but case-insensitive (file  ` aaa `  should be listed before file  ` bbb ` , file  ` .b `  should be listed before file  ` a ` , and file  ` Rona `  should be listed after file  ` jay ` ) 
+* One file name per line
+* The listing should end with a new line
+* You are not allowed to use  ` basename ` ,  ` grep ` ,  ` egrep ` ,  ` fgrep `  or  ` rgrep ` 
+```bash
     julien@production-503e7013:~/shell/fun_with_the_shell$ ls -Rla
     .:
     total 28
@@ -680,3 +970,115 @@ You are not allowed to use basename, grep, egrep, fgrep or rgrep
     main
     julien@production-503e7013:~/shell/fun_with_the_shell$
 
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 101-gifs ` 
+ Self-paced manual review  Panel footer - Controls 
+### 25. Acrostic
+          #advanced         Progress vs Score           Score: 0.00% (Checks completed: 0.00%)         Task Body An acrostic is a poem (or other form of writing) in which the first letter (or syllable, or word) of each line (or paragraph, or other recurring feature in the text) spells out a word, message or the alphabet. The word comes from the French acrostiche from post-classical Latin acrostichis). As a form of constrained writing, an acrostic can be used as a mnemonic device to aid memory retrieval.  [Read more](https://intranet.hbtn.io/rltoken/V8wUlT1trv0XGLfOIFgu6w) 
+ .
+Create a script that decodes acrostics that use the first letter of each line.
+* The ‘decoded’ message has to end with a new line
+* You are not allowed to use  ` grep ` ,  ` egrep ` ,  ` fgrep `  or  ` rgrep ` 
+```bash
+julien@ubuntu:/tmp/0x02$ cat An\ Acrostic 
+Elizabeth it is in vain you say
+Love not"—thou sayest it in so sweet a way:
+In vain those words from thee or L.E.L.
+Zantippe's talents had enforced so well:
+Ah! if that language from thy heart arise,
+Breath it less gently forth—and veil thine eyes.
+Endymion, recollect, when Luna tried
+To cure his love—was cured of all beside—
+His follie—pride—and passion—for he died.
+julien@ubuntu:/tmp/0x02$ ./102-acrostic < An\ Acrostic 
+ELIZABETH
+julien@ubuntu:/tmp/0x02$ 
+
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 102-acrostic ` 
+ Self-paced manual review  Panel footer - Controls 
+### 26. The biggest fan
+          #advanced         Progress vs Score           Score: 0.00% (Checks completed: 0.00%)         Task Body Write a script that parses web servers logs in TSV format as input and displays the 11 hosts or IP addresses which did the most requests.
+* Order by number of requests, most active host or IP at the top
+* You are not allowed to use  ` grep ` ,  ` egrep ` ,  ` fgrep `  or  ` rgrep ` 
+Format:
+```bash
+host    When possible, the hostname making the request. Uses the IP address if the hostname was unavailable.
+logname Unused, always -
+time    In seconds, since 1970
+method  HTTP method: GET, HEAD, or POST
+url Requested path
+response    HTTP response code
+bytes   Number of bytes in the reply
+
+```
+Here is an example with one day of logs of the NASA website (1995).
+```bash
+julien@ubuntu:/tmp/0x02$ wget https://raw.githubusercontent.com/jleetutorial/python-spark-tutorial/master/in/nasa_19950801.tsv
+--2021-10-25 14:44:34--  https://raw.githubusercontent.com/jleetutorial/python-spark-tutorial/master/in/nasa_19950801.tsv
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.111.133, 185.199.110.133, 185.199.108.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.111.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 782913 (765K) [text/plain]
+Saving to: ‘nasa_19950801.tsv’
+
+nasa_19950801.tsv                   100%[===================================================================>] 764,56K  2,01MB/s    in 0,4s
+
+2021-10-25 14:44:35 (2,01 MB/s) - ‘nasa_19950801.tsv’ saved [782913/782913]
+
+julien@ubuntu:/tmp/0x02$ head nasa_19950801.tsv
+host    logname time    method  url response    bytes
+in24.inetnebr.com   -   807249601   GET /shuttle/missions/sts-68/news/sts-68-mcc-05.txt 200 1839
+uplherc.upl.com -   807249607   GET /   304 0
+uplherc.upl.com -   807249608   GET /images/ksclogo-medium.gif  304 0
+uplherc.upl.com -   807249608   GET /images/MOSAIC-logosmall.gif    304 0
+uplherc.upl.com -   807249608   GET /images/USA-logosmall.gif   304 0
+ix-esc-ca2-07.ix.netcom.com -   807249609   GET /images/launch-logo.gif 200 1713
+uplherc.upl.com -   807249610   GET /images/WORLD-logosmall.gif 304 0
+slppp6.intermind.net    -   807249610   GET /history/skylab/skylab.html 200 1687
+piweba4y.prodigy.com    -   807249610   GET /images/launchmedium.gif    200 11853
+julien@ubuntu:/tmp/0x02$ ./103-the_biggest_fan < nasa_19950801.tsv 
+www-relay.pa-x.dec.com
+piweba3y.prodigy.com
+www.thyssen.com
+130.110.74.81
+ix-min1-02.ix.netcom.com
+uplherc.upl.com
+reggae.iinet.net.au
+seigate.sumiden.co.jp
+ircgate1.rcc-irc.si
+s150.phxslip4.indirect.com
+torben.dou.dk
+julien@ubuntu:/tmp/0x02$ 
+
+```
+ Task URLs  Github information Repo:
+* GitHub repository:  ` holberton-system_engineering-devops ` 
+* Directory:  ` 0x02-shell_redirections ` 
+* File:  ` 103-the_biggest_fan ` 
+ Self-paced manual review  Panel footer - Controls 
+×#### Recommended Sandbox
+[Running only]() 
+### 1 image(1/5 Sandboxes spawned)
+### Ubuntu 20.04
+Basic Ubuntu 20.04, with vim, emacs, curl, wget and all needed for Holberton Foundations
+SSHSFTP[Webterm](https://intranet.hbtn.io/user_containers/17836/webterm) 
+[Destroy]() 
+#### Credentials
+Host4aa76ec2605d.ba0aa7bd.hbtn-cod.ioUsername4aa76ec2605dPassword95896abd009a136e84ba#### Web access
+[HTTPS](https://4aa76ec2605d.ba0aa7bd.hbtn-cod.io/) 
+[HTTP](http://4aa76ec2605d.ba0aa7bd.hbtn-cod.io/) 
+[3000](http://4aa76ec2605d.ba0aa7bd.hbtn-cod.io:3000/) 
+[4000](http://4aa76ec2605d.ba0aa7bd.hbtn-cod.io:4000/) 
+[5000](http://4aa76ec2605d.ba0aa7bd.hbtn-cod.io:5000/) 
+[5001](http://4aa76ec2605d.ba0aa7bd.hbtn-cod.io:5001/) 
+[8000](http://4aa76ec2605d.ba0aa7bd.hbtn-cod.io:8000/) 
+[8080](http://4aa76ec2605d.ba0aa7bd.hbtn-cod.io:8080/) 
+#### Port mapping
+SSH49328HTTP49327HTTPS49326300049325MySQL49324400049323500049322500149321800049320808049319
