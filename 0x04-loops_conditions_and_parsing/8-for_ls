@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #Write a Bash script that displays
-for content in *
+cont="$(ls)"
+for content in $cont
 do
-    echo "${content:2:20}"
+    echo "$content" | cut -d "-" -f2
 done
