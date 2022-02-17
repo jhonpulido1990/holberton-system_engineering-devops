@@ -2,5 +2,5 @@
 #Write a Bash script that displays
 for content in *
 do
-    echo "$content"
+    echo "${content:2:20}"
 done
