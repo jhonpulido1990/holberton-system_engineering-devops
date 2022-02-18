@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 #We stopped our 4-to_infinity_and_beyond
-pkill 7-highlander
+pkill -f 7-highlander
