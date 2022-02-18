@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#Write a Bash script that displays Best School 10 times
+trap "I am invincible!!!" SIGTERM
+a=0
+while ((a >= 0))
+do
+   echo "To infinity and beyond"
+   sleep 2
+   ((a++))
+done
