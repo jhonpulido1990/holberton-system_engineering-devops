@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Write a Bash script that displays Best School 10 times
+a=0
+
+while ((a >= 0))
+do
+   echo "To infinity and beyond"
+   ((a++))
+done
