@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Write a Bash script that configures an Ubuntu server with the below requirements
+cp /etc/hosts /tmp.new
+sed -i "s/^127.* localhost$\g/127.0.0.2" /tmp.new
+sed -i "s/^facebook.com$\g/8.8.8.8" /tmp.new
+#cp -f /tmp.new /etc/hosts 
+cat /tmp.new
