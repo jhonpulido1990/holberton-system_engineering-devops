@@ -3,5 +3,5 @@
 
 sudo apt update
 sudo apt install nginx
-echo "hola" > /www/media
+echo "hola" > /var/www/html/index.html
 sudo service nginx restart
