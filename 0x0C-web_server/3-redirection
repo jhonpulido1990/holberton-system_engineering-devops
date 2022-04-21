@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 # Replace a line with multiple lines with sed
 
-sed -i "301 Moved Permanently"/g /etc/nginx/sites-available
-sudo systemctl reload nginx
+apt-get -y update
+apt-get -y install nginx
+ufw allow  'Nginx HTTP' #on port 80
+echo "Hello World!" >/var/www/html/index.nginx-debian.html
+sed -i 'https://www.youtube.com/watch?v=uNwjX8lSTIo' /etc/nginx/sites-available
+systemctl reload nginx
