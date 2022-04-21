@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Install nginx web server and listen port 80
 # Update repositories
-sudo apt-get update -y
+apt-get update -y
 # Install NGINX
-sudo apt-get install nginx -y
-sudo ufw allow 'Nginx Full'
+apt-get install nginx -y
+ufw allow 'Nginx Full'
 echo 'Hello World' > /var/www/html/index.nginx-debian.html
 service nginx restart
