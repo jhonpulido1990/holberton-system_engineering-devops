@@ -1,1 +1,5 @@
 #!/usr/bin/env bash
+# Replace a line with multiple lines with sed
+
+sed -i "301 Moved Permanently"/g /etc/nginx/sites-available
+sudo systemctl reload nginx
