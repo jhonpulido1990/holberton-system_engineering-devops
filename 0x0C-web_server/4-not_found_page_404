@@ -7,4 +7,5 @@ ufw allow  'Nginx HTTP' #on port 80
 echo "Hello World!" >/var/www/html/index.nginx-debian.html
 sed -i '46i rewrite ^/redirect_me https://www.nginx.com/ permanent;' /etc/nginx/sites-available/default
 echo "Ceci n'est pas une page" >/usr/share/nginx/html/custom_404.html
+sed -i '/usr/share/nginx/html/custom_404.html' /etc/nginx/sites-available/default
 service nginx restart
