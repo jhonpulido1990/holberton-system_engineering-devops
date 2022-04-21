@@ -5,5 +5,5 @@ apt-get -y update
 apt-get -y install nginx
 ufw allow  'Nginx HTTP' #on port 80
 echo "Hello World!" >/var/www/html/index.nginx-debian.html
-sed '^/redirect https://www.nginx.com/ permanent;' /etc/nginx/sites-available/default
+sed -i '^/redirect https://www.nginx.com/ permanent;' /etc/nginx/sites-available/default
 service nginx restart
