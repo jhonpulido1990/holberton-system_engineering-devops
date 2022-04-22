@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Replace a line with multiple lines with sed
 
+service nginx stop
 apt-get -y update
 apt-get -y install nginx
 ufw allow  'Nginx HTTP' #on port 80
