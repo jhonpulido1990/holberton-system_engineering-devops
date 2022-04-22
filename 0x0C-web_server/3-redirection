@@ -1,10 +1,16 @@
 #!/usr/bin/env bash
 # Replace a line with multiple lines with sed
 
-service nginx stop
-apt-get -y update
-apt-get -y install nginx
-ufw allow  'Nginx HTTP' #on port 80
-echo "Hello World!" >/var/www/html/index.nginx-debian.html
-sed -i '46i rewrite ^/redirect_me https://www.nginx.com/ permanent;' /etc/nginx/sites-available/default
-service nginx restart
+if [ ! -x /usr/sbin/nginx ];
+then
+    apt-get -y update
+    apt-get -y install nginx
+    ufw allow  'Nginx HTTP' #on port 80
+    echo "Hello World!" >/var/www/html/index.nginx-debian.html
+    sed -i '41i rewrite ^/redirect_me https://www.nginx.com/ permanent;' /etc/nginx/sites-available/default
+    service nginx restart
+else
+    echo "Hello World!" >/var/www/html/index.nginx-debian.html
+    sed -i '41i rewrite ^/redirect_me https://www.nginx.com/ permanent;' /etc/nginx/sites-available/default
+    service nginx restart
+fi
