@@ -3,10 +3,6 @@ exec {'apt-get-update':
   command => '/usr/bin/apt-get -y update',
 }
 
-exec {'apt upgrade':
-  command => '/usr/bin/apt-get -y upgrade',
-}
-
 package {'nginx':
   ensure  => installed,
   require => Exec[apt-get-update],
