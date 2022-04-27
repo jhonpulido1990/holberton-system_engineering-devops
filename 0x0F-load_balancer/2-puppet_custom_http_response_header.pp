@@ -1,5 +1,5 @@
 # Just as in task #0, we’d like you to automate the task of creating a custom HTTP header response, but with Puppet.
-exec {'apt update':
+exec {'apt-get-update':
   command => '/usr/bin/apt-get -y update',
 }
 
@@ -9,7 +9,7 @@ exec {'apt upgrade':
 
 package {'nginx':
   ensure  => installed,
-  require => Exec[apt update],
+  require => Exec[apt-get-update],
 }
 
 file_line { 'a':
