@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# create backap
+mysqldump --user root --password="$1"  --all-databases > backup.sql
+tar -czvf "$(date +%d-%m-%Y).tar.gz" backap.sql
