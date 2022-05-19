@@ -2,9 +2,9 @@
 """using this REST API,
 for a given employee ID,
 return list progress"""
+import json
 import requests
 from sys import argv
-import json
 
 if __name__ == "__main__":
     user = requests.get('https://jsonplaceholder.typicode.com/users/' +
@@ -22,7 +22,6 @@ if __name__ == "__main__":
             dictio["username"] = user_json["name"]
             lista.append(dictio)
             dicci[t["userId"]] = lista
-    print(dicci)
-
-with open("USER_ID.json", "w") as outfile:
-    json.dump(dicci, outfile)
+    filename = argv[1] + ".json"
+    with open(filename, "w") as outfile:
+        json.dump(dicci, outfile)
