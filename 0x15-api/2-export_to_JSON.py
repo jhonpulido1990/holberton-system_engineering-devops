@@ -21,7 +21,7 @@ if __name__ == "__main__":
             dictio["completed"] = t["completed"]
             dictio["username"] = user_json["name"]
             lista.append(dictio)
-            dicci[t["userId"]] = lista
+    dicci[t["userId"]] = lista
     filename = argv[1] + ".json"
     with open(filename, "w") as outfile:
         json.dump(dicci, outfile)
