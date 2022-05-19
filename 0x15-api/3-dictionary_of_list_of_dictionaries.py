@@ -17,9 +17,9 @@ if __name__ == "__main__":
     todos = requests.get('https://jsonplaceholder.typicode.com/todos')
     for t in todos.json():
         dictio = {}
+        dictio["username"] = afterdic[t["userId"]]
         dictio["task"] = t["title"]
         dictio["completed"] = t["completed"]
-        dictio["username"] = afterdic[t["userId"]]
         lista.append(dictio)
         dicci[t["userId"]] = lista
     filename = "todo_all_employees.json"
