@@ -16,12 +16,12 @@ if __name__ == "__main__":
     lista = []
     todos = requests.get('https://jsonplaceholder.typicode.com/todos')
     for t in todos.json():
-            dictio = {}
-            dictio["task"] = t["title"]
-            dictio["completed"] = t["completed"]
-            dictio["username"] = afterdic[t["userId"]]
-            lista.append(dictio)
-            dicci[t["userId"]] = lista
-    filename =  "todo_all_employees.json"
+        dictio = {}
+        dictio["task"] = t["title"]
+        dictio["completed"] = t["completed"]
+        dictio["username"] = afterdic[t["userId"]]
+        lista.append(dictio)
+        dicci[t["userId"]] = lista
+    filename = "todo_all_employees.json"
     with open(filename, "w") as outfile:
         json.dump(dicci, outfile)
