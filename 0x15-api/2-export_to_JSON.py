@@ -24,5 +24,5 @@ if __name__ == "__main__":
             dicci[t["userId"]] = lista
     print(dicci)
 
-with open("sample.json", "w") as outfile:
+with open("todo_all_employees.json", "w") as outfile:
     json.dump(dicci, outfile)
