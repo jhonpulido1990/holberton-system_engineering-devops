@@ -8,8 +8,8 @@ from sys import argv
 i = 0
 j = 0
 if __name__ == "__main__":
-    user = requests.get('https://jsonplaceholder.typicod\
-                        e.com/users/' + argv[1])
+    user = requests.get('https://jsonplaceholder.typicode.com/users/' +
+                        argv[1])
     user_json = user.json()
     task = ""
     todos = requests.get('https://jsonplaceholder.typicode.com/todos')
