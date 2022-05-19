@@ -1,0 +1,28 @@
+#!/usr/bin/python3
+"""using this REST API,
+for a given employee ID,
+return list progress"""
+import requests
+from sys import argv
+import json
+
+if __name__ == "__main__":
+    user = requests.get('https://jsonplaceholder.typicode.com/users/' +
+                        argv[1])
+    user_json = user.json()
+    task = ""
+    dicci = {}
+    lista = []
+    todos = requests.get('https://jsonplaceholder.typicode.com/todos')
+    for t in todos.json():
+        if t.get('userId') == int(argv[1]):
+            dictio = {}
+            dictio["task"] = t["title"]
+            dictio["completed"] = t["completed"]
+            dictio["username"] = user_json["name"]
+            lista.append(dictio)
+            dicci[t["userId"]] = lista
+    print(dicci)
+
+with open("sample.json", "w") as outfile:
+    json.dump(dicci, outfile)
