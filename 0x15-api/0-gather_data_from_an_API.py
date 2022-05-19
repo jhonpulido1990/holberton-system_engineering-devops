@@ -19,6 +19,6 @@ if __name__ == "__main__":
                 task += "\t " + t['title'] + '\n'
                 i += 1
             j += 1
-    print("Employee {} is done with\
-           tasks({}/{}):".format(user_json['name'], i, j))
+    print("Employee {} is done with tasks({}/{}):".format(
+           user_json['name'], i, j))
     print(task, end='')
