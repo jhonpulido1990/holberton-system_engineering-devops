@@ -1,0 +1,19 @@
+-----------------------------------------------------------
+------------------ CREAR UN USUARIO MYSQL -----------------
+-----------------------------------------------------------
+CREATE USER 'holberton_user'@'localhost' IDENTIFIED BY 'projectcorrection280hbtn';
+CREATE USER 'replica_user'@'%' IDENTIFIED BY 'root';
+CREATE USER 'username'@'host' IDENTIFIED WITH authentication_plugin BY 'password';
+
+------------------------------------------------------------
+---------------- ---- PRIVILEGIOS ------------------------
+GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';
+GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
+GRANT REPLICATION CLIENT ON *.* TO 'holberton_user'@'localhost';
+GRANT SELECT ON tyrell_corp.* TO 'holberton_user'@'localhost';
+GRANT SELECT ON mysql.user TO 'holberton_user'@'localhost';
+
+
+
+CREATE TABLE nexus6 ( id int primary key not null, name varchar (25) );
+INSERT INTO nexus6 (id,name) values (1,'Leon');
